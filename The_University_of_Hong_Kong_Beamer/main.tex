@@ -1,0 +1,145 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+% \usepackage{xeCJK}            % not used with latex engine
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{utopia}            % font utopia imported
+
+% Theme
+\usecolortheme{default}
+\useoutertheme{default}        % remove shadow on frames
+
+%----------------- Color settings (low saturation) -----------------
+\definecolor{HKUDark}{RGB}{0,70,70}
+\definecolor{HKULight}{RGB}{235,242,242}
+\definecolor{HKUGrey}{RGB}{80,80,80}
+
+\setbeamercolor*{palette primary}{bg=white, fg=HKUDark}
+\setbeamercolor*{palette secondary}{bg=HKUDark, fg=white}
+\setbeamercolor*{palette tertiary}{bg=HKULight, fg=HKUDark}
+\setbeamercolor*{palette quaternary}{bg=white, fg=HKUDark}
+
+\setbeamercolor{title}{fg=HKUDark,bg=white}
+\setbeamercolor{frametitle}{fg=HKUDark, bg=white}
+\setbeamercolor{structure}{fg=HKUDark}
+
+\setbeamercolor{item}{fg=HKUDark}
+\setbeamercolor{caption name}{fg=HKUDark}
+\setbeamercolor{section in toc}{fg=HKUDark}
+\setbeamercolor{section in head/foot}{bg=HKULight, fg=HKUDark}
+\setbeamercolor{titlelike}{fg=HKUDark}
+
+% footline colors (three-part bar)
+\setbeamercolor{author in head/foot}{bg=HKUDark, fg=white}
+\setbeamercolor{title in head/foot}{bg=HKUDark, fg=white}
+\setbeamercolor{date in head/foot}{bg=HKUDark, fg=white}
+
+\usefonttheme{professionalfonts}
+\usepackage{natbib}
+\usepackage{hyperref}
+
+%----------------- Layout tweaks -----------------
+% Frametitle without colored box
+\setbeamertemplate{frametitle}{%
+  \vspace{4pt}%
+  \usebeamerfont{frametitle}\insertframetitle\par
+  \vspace{2pt}%
+}
+
+% Top bar: show all sections, highlight current one
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+    \hspace*{2ex}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{}%
+  \end{beamercolorbox}%
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom footline: left = author+email, middle = institute, right = title + page number
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \hspace*{2ex}\usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshortinstitute
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \insertshorttitle\hspace{1em}%
+      \insertframenumber/\inserttotalframenumber\hspace*{2ex}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% Slightly larger text margins
+\setbeamersize{text margin left=10mm, text margin right=10mm}
+
+%------------------------------------------------------------
+% Title info
+% For left part: short author includes email
+\title[Some Title]{Some Title}
+\subtitle{Some Subtitle}
+\author[Name -- xxx@hku.hk]{Name}
+\institute[The University of Hong Kong]{The University of Hong Kong}
+\date[xxx Presentation 2025.11]{xxx Presentation 2025.11}
+\titlegraphic{\includegraphics[height=1.2cm]{figures/hkulogo.png}}
+
+
+%------------------------------------------------------------
+% Simple section frames
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    {\usebeamerfont{title}\insertsectionhead\par}
+    \vfill
+  \end{frame}
+}
+
+%------------------------------------------------------------
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Contents}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------
+\section{Introduction}
+\begin{frame}{Introduction}
+  % ...
+\end{frame}
+
+\section{Method}
+\begin{frame}{Method}
+  % ...
+\end{frame}
+
+\section{Experiments}
+\begin{frame}{Experiments}
+  % ...
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+  % ...
+\end{frame}
+
+\section*{Acknowledgement}
+\begin{frame}
+  \vfill
+  \begin{center}
+    {\Large\color{HKUDark}Thank you!}
+  \end{center}
+  \vfill
+\end{frame}
+
+\end{document}
